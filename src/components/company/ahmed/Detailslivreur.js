@@ -1,11 +1,15 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUserfind, selectConnectuser } from '../../redux/slices/userSlice';
-import Classlistdelivery from './Classlistdelivery';
+import { useHistory } from 'react-router-dom';
+import {
+  loginUserfind,
+  selectConnectuser,
+} from '../../../redux/slices/userSlice';
+import Classdetails from './Classdetails';
 
-export default function ListDelivery(props) {
+const Detailslivreur = (props) => {
   const [connectUser, error] = useSelector(selectConnectuser);
   const dispatch = useDispatch();
 
@@ -23,10 +27,7 @@ export default function ListDelivery(props) {
     }
   }, [Cookies.get()]);
 
-  return (
-    <div style={{ height: '700px' }}>
-      <h1>List Delivery</h1>
-      <Classlistdelivery con={connectUser} />
-    </div>
-  );
-}
+  return <Classdetails></Classdetails>;
+};
+
+export default Detailslivreur;

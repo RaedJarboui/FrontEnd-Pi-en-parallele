@@ -37,3 +37,10 @@
   }
 }
 
+.colllll1 {
+  display: flex;
+
+  flex-wrap: wrap;
+  height: auto;
+  width: auto;
+}

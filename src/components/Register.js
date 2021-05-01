@@ -1,15 +1,15 @@
-import { useState } from "react";
-import "../styles/Register.css";
-import login from "../assets/login.jpg";
-import axios from "axios";
+import { useState } from 'react';
+import '../styles/Register.css';
+import login from '../assets/login.jpg';
+import axios from 'axios';
 
 export default function Register() {
   const [user, setUser] = useState({
-    username: "",
-    email: "",
-    password: "",
-    adresse: "",
-    role: "",
+    username: '',
+    email: '',
+    password: '',
+    adresse: '',
+    role: '',
   });
 
   const handleChange = (e) => {
@@ -19,7 +19,7 @@ export default function Register() {
   };
 
   function handleLogin() {
-      console.log(user)
+    console.log(user);
   }
 
   return (
@@ -89,10 +89,16 @@ export default function Register() {
 
               <div className="form-row">
                 <div className="col-lg-7">
-                  <select className="custom-select custom-select-lg my-3" name="role" value={user.role} onChange={handleChange}>
-                    <option >Select your profile</option>
+                  <select
+                    className="custom-select custom-select-lg my-3"
+                    name="role"
+                    value={user.role}
+                    onChange={handleChange}
+                  >
+                    <option>Select your profile</option>
                     <option value="user">User</option>
                     <option value="company">Company</option>
+                    <option value="deliveryMan">deliveryMan</option>
                   </select>
                 </div>
               </div>
